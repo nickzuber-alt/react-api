@@ -1,0 +1,22 @@
+{
+  "name": "react-api",
+  "version": "1.0.0",
+  "description": "0.0.1",
+  "main": "src/react-api.js",
+  "scripts": {
+    "build": "gulp",
+    "test": "node --harmony unit/*.js",
+    "ci": "node --harmony unit/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickzuber/react-api.git"
+  },
+  "keywords": [
+    "react-api",
+    "json",
+    "api"
+  ],
+  "author": "Nick Zuber <zuber.nicholas@gmail.com>",
+  "license": "MIT"
+}
