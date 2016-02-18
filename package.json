@@ -1,25 +1,33 @@
 {
   "name": "react-api",
+  "author": "Nick Zuber <zuber.nicholas@gmail.com>",
   "version": "1.0.0",
   "description": "0.0.1",
-  "main": "src/react-api.js",
+  "main": "build/react-api.min.js",
   "scripts": {
     "build": "gulp",
     "test": "node --harmony unit/*.js",
     "ci": "node --harmony unit/*.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nickzuber/react-api.git"
   },
   "keywords": [
     "react-api",
     "json",
     "api"
   ],
-  "author": "Nick Zuber <zuber.nicholas@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickzuber/react-api.git"
+  },
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/callemall/material-ui/issues"
+  },
   "homepage": "https://github.com/nickzuber/react-api#readme",
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  },
   "devDependencies": {
     "ejs": "^2.4.1",
     "eslint": "^2.1.0",
@@ -27,6 +35,7 @@
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
     "gulp-header": "^1.7.1",
+    "gulp-react": "^3.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.2",
     "gulp-webpack": "^1.5.0",
@@ -36,8 +45,5 @@
     "react-dom": "^0.14.7",
     "reactify": "^1.1.1",
     "tape": "^4.4.0"
-  },
-  "dependencies": {
-    "request": "^2.69.0"
   }
 }
