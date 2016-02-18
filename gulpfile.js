@@ -19,38 +19,45 @@ var banner = ['/*!',
 
 // Contacat & compress javascript files for module production
 gulp.task('build', function(){
-    gulp.src(['src/*.js'])
-    .pipe(browserify({
-        debug: true,
-        transform: ['reactify']
-    }))
-    .pipe(uglify())
-    .pipe(rename({
-        basename: 'react-api',
-        extname: '.min.js'
-    }))
-    .pipe(header(banner, {pkg: pkg}))
-    .pipe(gulp.dest('bin'));
+
+/*
+  gulp.src(['src/*.js'])
+  .pipe(browserify({
+    debug: true,
+    transform: ['reactify']
+  }))
+  .pipe(uglify())
+  .pipe(rename({
+    basename: 'react-api',
+    extname: '.min.js'
+  }))
+  .pipe(header(banner, {pkg: pkg}))
+  .pipe(gulp.dest('bin'));
+*/
+
+  // Move files to public directory for testing
+  gulp.src(['src/*.{js,jsx}'])
+  .pipe(gulp.dest('tests/modules/'));
 });
 
 // Contacat & compress javascript files for testing server
 gulp.task('test', function(){
-    gulp.src(['tests/modules/render.js'])
-    .pipe(webpack({
-        watch: false,
-        module: {
-            loaders: [
-                { test: /\.jsx$/, loader: 'jsx-loader' },
-            ],
-        },
-    }))
-    //.pipe(uglify())
-    .pipe(rename({
-        basename: 'app',
-        extname: '.bundle.js'
-    }))
-    .pipe(header(banner, {pkg: pkg}))
-    .pipe(gulp.dest('tests/public/scripts/'))
+  gulp.src(['tests/modules/render.js'])
+  .pipe(webpack({
+    watch: false,
+    module: {
+      loaders: [
+        { test: /\.jsx$/, loader: 'jsx-loader' },
+      ],
+    },
+  }))
+  //.pipe(uglify())
+  .pipe(rename({
+    basename: 'app',
+    extname: '.bundle.js'
+  }))
+  .pipe(header(banner, {pkg: pkg}))
+  .pipe(gulp.dest('tests/public/scripts/'));
 });
 
 

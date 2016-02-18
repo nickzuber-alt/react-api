@@ -2,9 +2,9 @@
 'use strict';
 
 const React = require('react');
-const request = require('./request.js');
-const md5 = require('CryptoJS').MD5;
-const Component = require('./component.js');
+//const request = require('./request.js');
+const md5 = require('../tools/crypto.js');
+const Component = require('./component.jsx');
 
 const react_api = React.createClass({
 
@@ -14,22 +14,29 @@ const react_api = React.createClass({
     };
   },
 
-  readyData: function(data){
+  dataReady: function(){
+    console.log(this.state.data);
+  },
+
+  prepareData: function(data){
     this.setState({
-      data: data
-    })
+        data: data
+      }, this.dataReady);
+    console.log('prepareData function has fired and api data has just been set');
   },
 
   render: function(){
+    var token = md5(Math.random().toString());
     return(
-      <div>
-        <Component token={md5(Math.random())}>
-          {(childState) => {
-            // other things
-          }}
-        </Component>
+      <div>parent
+        <Component
+          token={token}
+          prepareData={this.prepareData}
+        />  
       </div>
     );
   }
 
 });
+
+module.exports = react_api;

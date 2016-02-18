@@ -9,24 +9,31 @@ const React = require('react');
  */
 const Component = React.createClass({
 
-  propsTypes: {
-    children: React.Prototypes.func.isRequired
-  },
-
-  getInitialState: function(){
-    var tok = this.props.token || null;
-    return {
-      data: []
-    };
+  props: {
+    prepareData: React.PropTypes.func.isRequired
   },
 
   componentDidMount: function(){
-    var data = JSON.parse(document.querySelector('[data-react-api=' + this.props.token + ']').innerHTML);
-    this.setState({data: data});
+    console.log(this.props.token);
+    var data = {
+      "error":"Something went wrong when trying to locate the data.",
+      "token":this.props.token
+    };
+    
+    if(!!document.querySelector('[data-react-api="' + this.props.token + '"]')){
+      data = JSON.parse(document.querySelector('[data-react-api=' + this.props.token + ']')).innerHTML;
+    }
+    
+    console.log('about to send data to parent');
+    this.props.prepareData(data);
   },
 
   render: function(){
-    return this.props.children(this.state.data);
+    return(
+      <div>
+        child
+      </div>
+    );
   }
 
 });
