@@ -20,7 +20,7 @@ const OPTIONS = {
 // Construct React component
 const app = React.createClass({
 
-  handleClick: function(){
+  handleResponse: function(){
     console.log('API response:');
     console.log(this.refs.github.state.data);
   },
@@ -29,7 +29,7 @@ const app = React.createClass({
     return(
       <div>
 
-        <Response ref='github' url={OPTIONS.URL} callback={this.handleClick} />
+        <Response ref='github' url={OPTIONS.URL} callback={this.handleResponse} />
 
       </div>
     );
