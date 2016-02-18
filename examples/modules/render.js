@@ -1,16 +1,7 @@
 /*
- *  ________________________
- *
- *  React App Rendering File
- *  ________________________
- *
  *  This is the page that renders the React app and
  *  loads React onto the client. This is necessary for
  *  React functionality on the DOM load.
- *
- *  JSON __data is taken from the current page and parsed
- *  for routing to the proper page.
- *
  */
 
 const React = require('react');

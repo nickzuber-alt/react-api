@@ -51,7 +51,7 @@ var react_api = React.createClass({
       request.send();
     }
     catch(e){
-      console.warn("Error: Connection refused from " + target);
+      console.error("Error: Connection refused from " + target);
     }
   },
 
