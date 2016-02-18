@@ -4,10 +4,10 @@ A simple tool for fetching data from an API with React.
 
 ## Installation
 
-Installing react-api in your Node project is simple:
+Installing [react-api](https://github.com/nickzuber/react-api) in your Node project is simple:
 
 ```
-$ npm install [react-api](https://github.com/nickzuber/react-api) --save
+$ npm install react-api --save
 ```
 
 ## Usage
@@ -35,9 +35,7 @@ const MyAwesomeComponent = React.createClass({
   render: function(){
     return(
       <div>
-        ...
         <Response ref='github' url={URL} callback={this.handleResponse} />
-        ...
       </div>
     );
   }
