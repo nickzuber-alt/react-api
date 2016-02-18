@@ -12,7 +12,7 @@ $ npm install react-api --save
 
 ## Usage
 
-[react-api](https://github.com/nickzuber/react-api) is a simple React component at its core. You would treat it as you would any other React component, with a few specific settings to keep in mind while configuring:
+At its core, [react-api](https://github.com/nickzuber/react-api) is really just a simple React component. You would treat it as you would any other React component, with a few specific settings to keep in mind while configuring:
 
  - **ref** - *string* - Used to reference the component getting the API response.
  - **url** - *string* - The address of where you're getting your API response.
@@ -24,6 +24,9 @@ Here is a basic example of using [react-api](https://github.com/nickzuber/react-
 
 ````javascript
 const ReactAPI = require('./react-api.js');
+
+// The address of where to retrieve data
+var URL = 'https://api.github.com/users/nickzuber/repos';
 
 const MyAwesomeComponent = React.createClass({
 
