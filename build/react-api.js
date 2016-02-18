@@ -1,3 +1,7 @@
+/*!
+ // react-api v1.0.0 | MIT 
+ // Copyright (c) 2016 Nick Zuber <zuber.nicholas@gmail.com>
+ */
 
 'use strict';
 
@@ -8,7 +12,7 @@ var md5 = require('../tools/crypto.js');
  * @prop {string} url, where to get the data from
  * @prop {function} callback, what to do once we have that data
  */
-var react_api = React.createClass({
+var react_api = React.createClass({displayName: "react_api",
 
   getInitialState: function(){
     return {
@@ -78,7 +82,7 @@ var react_api = React.createClass({
 
   render: function(){
     return(
-      <div></div>
+      React.createElement("div", null)
     );
   }
 

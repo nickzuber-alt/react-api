@@ -2,7 +2,6 @@
 'use strict';
 
 var gulp = require('gulp');
-var uglify = require('gulp-uglify'); // minify build files
 var rename = require('gulp-rename'); // custom name for build files
 var webpack = require('gulp-webpack'); // compiles React modules
 var header = require('gulp-header'); // custom comment header on build files
@@ -21,23 +20,22 @@ gulp.task('build', function(){
 
   gulp.src(['src/*.{js,jsx}'])
   .pipe(react({harmony: true}))
-  .pipe(uglify())
   .pipe(rename({
     basename: 'react-api',
-    extname: '.min.js'
+    extname: '.js'
   }))
   .pipe(header(banner, {pkg: pkg}))
   .pipe(gulp.dest('build'));
 });
 
 // Contacat & compress javascript files for testing server
-gulp.task('test', function(){
+gulp.task('build-examples', function(){
 
   // Move files to public directory for testing
-  gulp.src(['src/*.{js,jsx}'])
-  .pipe(gulp.dest('tests/modules/'));
+  gulp.src(['build/*.{js,jsx}'])
+  .pipe(gulp.dest('examples/modules/'));
 
-  gulp.src(['tests/modules/render.js'])
+  gulp.src(['examples/modules/render.js'])
   .pipe(webpack({
     watch: false,
     module: {
@@ -46,15 +44,14 @@ gulp.task('test', function(){
       ],
     },
   }))
-  //.pipe(uglify())
   .pipe(rename({
     basename: 'app',
     extname: '.bundle.js'
   }))
   .pipe(header(banner, {pkg: pkg}))
-  .pipe(gulp.dest('tests/public/scripts/'));
+  .pipe(gulp.dest('examples/public/scripts/'));
 });
 
 
 // Set default to build
-gulp.task('default', ['build', 'test']);
+gulp.task('default', ['build', 'build-examples']);
