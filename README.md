@@ -39,7 +39,7 @@ const MyAwesomeComponent = React.createClass({
   render: function(){
     return(
       <div>
-        <Response ref='github' url={URL} callback={this.handleResponse} />
+        <ReactAPI ref='github' url={URL} callback={this.handleResponse} />
       </div>
     );
   }
