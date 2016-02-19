@@ -5,7 +5,9 @@
   "description": "A simple tool for fetching and handling data from an API with React",
   "main": "build/react-api.min.js",
   "scripts": {
-    "build": "gulp",
+    "build": "gulp build",
+    "examples": "gulp build-examples",
+    "prepare": "gulp",
     "test": "node --harmony unit/*.js",
     "ci": "node --harmony unit/*.js"
   },
