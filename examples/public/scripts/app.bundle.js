@@ -1,5 +1,5 @@
 /*!
- // react-api v1.0.0 | MIT 
+ // react-api v1.0.5 | MIT 
  // Copyright (c) 2016 Nick Zuber <zuber.nicholas@gmail.com>
  */
 /******/ (function(modules) { // webpackBootstrap
@@ -49,18 +49,9 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
-	 *  ________________________
-	 *
-	 *  React App Rendering File
-	 *  ________________________
-	 *
 	 *  This is the page that renders the React app and
 	 *  loads React onto the client. This is necessary for
 	 *  React functionality on the DOM load.
-	 *
-	 *  JSON __data is taken from the current page and parsed
-	 *  for routing to the proper page.
-	 *
 	 */
 
 	const React = __webpack_require__(1);
@@ -19697,7 +19688,7 @@
 	const React = __webpack_require__(1);
 
 	// TESTING MODULE
-	const Response = __webpack_require__(160);
+	const ReactAPI = __webpack_require__(160);
 
 	const OPTIONS = {
 	  URL: 'https://api.github.com/users/nickzuber/repos'
@@ -19706,7 +19697,7 @@
 	// Construct React component
 	const app = React.createClass({displayName: "app",
 
-	  handleClick: function(){
+	  handleResponse: function(){
 	    console.log('API response:');
 	    console.log(this.refs.github.state.data);
 	  },
@@ -19715,7 +19706,7 @@
 	    return(
 	      React.createElement("div", null, 
 
-	        React.createElement(Response, {ref: "github", url: OPTIONS.URL, callback: this.handleClick})
+	        React.createElement(ReactAPI, {ref: "github", url: OPTIONS.URL, callback: this.handleResponse})
 
 	      )
 	    );

@@ -11,10 +11,6 @@ var md5 = require('../tools/crypto.js');
 var react_api = React.createClass({
 
   getInitialState: function(){
-    return {
-      data: null
-    };
-
     // Validate props
     if(typeof this.props.callback !== 'function'){
       throw new TypeError("Expected props.callback to be a function");
@@ -22,6 +18,10 @@ var react_api = React.createClass({
     if(typeof this.props.url !== 'string'){
       throw new TypeError("Expected props.url to be a string");
     }
+
+    return {
+      data: null
+    };
   },
 
   componentDidMount: function(){

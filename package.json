@@ -1,7 +1,7 @@
 {
   "name": "react-api",
   "author": "Nick Zuber <zuber.nicholas@gmail.com>",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simple tool for fetching and handling data from an API with React",
   "main": "build/react-api.min.js",
   "scripts": {

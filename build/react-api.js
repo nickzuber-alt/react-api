@@ -1,5 +1,5 @@
 /*!
- // react-api v1.0.0 | MIT 
+ // react-api v1.0.5 | MIT 
  // Copyright (c) 2016 Nick Zuber <zuber.nicholas@gmail.com>
  */
 
@@ -15,10 +15,6 @@ var md5 = require('../tools/crypto.js');
 var react_api = React.createClass({displayName: "react_api",
 
   getInitialState: function(){
-    return {
-      data: null
-    };
-
     // Validate props
     if(typeof this.props.callback !== 'function'){
       throw new TypeError("Expected props.callback to be a function");
@@ -26,6 +22,10 @@ var react_api = React.createClass({displayName: "react_api",
     if(typeof this.props.url !== 'string'){
       throw new TypeError("Expected props.url to be a string");
     }
+
+    return {
+      data: null
+    };
   },
 
   componentDidMount: function(){
@@ -55,7 +55,7 @@ var react_api = React.createClass({displayName: "react_api",
       request.send();
     }
     catch(e){
-      console.warn("Error: Connection refused from " + target);
+      console.error("Error: Connection refused from " + target);
     }
   },
 
