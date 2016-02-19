@@ -1,5 +1,5 @@
 # [react-api](https://github.com/nickzuber/react-api)
-[![npm version](https://badge.fury.io/js/react-api.svg)](https://badge.fury.io/js/react-api)
+[![Build Status](https://travis-ci.org/nickzuber/react-api.svg?branch=master)](https://travis-ci.org/nickzuber/react-api) [![npm version](https://badge.fury.io/js/react-api.svg)](https://badge.fury.io/js/react-api)
 
 A simple tool for fetching and handling data from an API with React
 
