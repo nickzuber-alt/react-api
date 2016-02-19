@@ -24,7 +24,7 @@ At its core, [react-api](https://github.com/nickzuber/react-api) is really just 
 Here is a basic example of using [react-api](https://github.com/nickzuber/react-api) to get some data of a GitHub user's repositories:
 
 ````javascript
-const ReactAPI = require('./react-api.js');
+const ReactAPI = require('react-api');
 
 // The address of where to retrieve data
 var URL = 'https://api.github.com/users/nickzuber/repos';
