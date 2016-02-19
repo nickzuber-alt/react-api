@@ -11,7 +11,7 @@
 const React = require('react');
 
 // TESTING MODULE
-const Response = require('./react-api.js');
+const ReactAPI = require('./react-api.js');
 
 const OPTIONS = {
   URL: 'https://api.github.com/users/nickzuber/repos'
@@ -29,7 +29,7 @@ const app = React.createClass({
     return(
       <div>
 
-        <Response ref='github' url={OPTIONS.URL} callback={this.handleResponse} />
+        <ReactAPI ref='github' url={OPTIONS.URL} callback={this.handleResponse} />
 
       </div>
     );
